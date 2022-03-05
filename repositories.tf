@@ -10,6 +10,6 @@ resource "github_repository" "fastapi-blog" {
 }
 
 resource "github_branch_default" "branch_default_fastapi-blog" {
-  repository = github_repository.fastapi-blog
+  repository = github_repository.fastapi-blog.name
   branch = "main"
 }
