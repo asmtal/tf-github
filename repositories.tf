@@ -5,7 +5,11 @@ resource "github_repository" "fastapi-blog" {
 	visibility = "public"
 	
 	delete_branch_on_merge = true
-	default_branch         = "main"
 	
 	vulnerability_alerts   = true
+}
+
+resource "github_branch_default" "branch_default_fastapi-blog" {
+  repository = github_repository.fastapi-blog
+  branch = "main"
 }
